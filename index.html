@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookverse Digital - Seus eBooks Favoritos</title>
+    <meta name="description" content="Explore um universo de conhecimento e aventura com os eBooks da Bookverse Digital.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ["Open Sans", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+                        montserrat: ["Montserrat", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+                    },
+                    colors: {
+                        'brand-blue-dark': '#0A2463',
+                        'brand-orange': '#FF8C42',
+                        'brand-gray-light': '#F0F0F0',
+                        'brand-text-dark': '#333333',
+                        'brand-blue-medium': '#1E6091',
+                        'brand-white': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom scrollbar for a more modern look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0A2463; /* brand-blue-dark */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1E6091; /* brand-blue-medium */
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Basic responsive image styling */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-brand-white text-brand-text-dark">
+
+    <!-- Navbar Section -->
+    <nav id="navbar" class="bg-brand-blue-dark text-brand-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <a href="#" class="text-2xl font-montserrat font-bold">
+                Bookverse Digital
+            </a>
+            <button id="mobile-menu-button" class="md:hidden block text-brand-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            <div id="mobile-menu" class="hidden md:flex md:items-center md:space-x-4 font-montserrat w-full md:w-auto mt-4 md:mt-0">
+                <a href="#hero" class="block md:inline-block py-2 md:py-0 hover:text-brand-orange transition-colors">Início</a>
+                <a href="#catalog" class="block md:inline-block py-2 md:py-0 hover:text-brand-orange transition-colors">Catálogo</a>
+                <a href="#about" class="block md:inline-block py-2 md:py-0 hover:text-brand-orange transition-colors">Sobre</a>
+                <a href="#testimonials" class="block md:inline-block py-2 md:py-0 hover:text-brand-orange transition-colors">Depoimentos</a>
+                <a href="#contact" class="block md:inline-block py-2 md:py-0 hover:text-brand-orange transition-colors">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-brand-gray-light py-20 md:py-32">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-montserrat font-bold text-brand-blue-dark mb-6">
+                Desvende Novos Mundos em Cada Página
+            </h1>
+            <p class="text-lg md:text-xl text-brand-text-dark max-w-2xl mx-auto mb-8">
+                Sua próxima grande leitura começa aqui. Explore um universo de conhecimento e aventura com os eBooks da Bookverse Digital, cuidadosamente criados para inspirar e transformar.
+            </p>
+            <a href="#catalog"
+               class="bg-brand-orange text-brand-white font-montserrat font-semibold py-3 px-8 rounded-md hover:bg-opacity-80 transition-colors text-lg inline-block shadow-lg transform hover:scale-105">
+                Explore Nossos eBooks
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured eBooks Section (Simplified for single page) -->
+    <section id="featured-preview" class="py-16 bg-brand-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-brand-blue-dark text-center mb-12">
+                Conheça Nosso Destaque
+            </h2>
+            <div class="flex justify-center">
+                 <!-- The main eBook will be in the Catalog section -->
+                 <p class="text-center text-brand-text-dark">Nosso principal eBook está detalhado na seção Catálogo abaixo. Role para descobrir!</p>
+            </div>
+             <div class="text-center mt-12">
+                <a href="#catalog"
+                   class="bg-brand-blue-dark text-brand-white font-montserrat font-semibold py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg inline-block shadow-lg transform hover:scale-105">
+                    Ver Catálogo Completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="py-16 bg-brand-gray-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-montserrat font-bold text-brand-blue-dark text-center mb-12">
+                Nosso Catálogo de eBooks
+            </h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- eBook Card -->
+                <div class="bg-brand-white p-6 rounded-lg shadow-xl flex flex-col max-w-sm w-full transform hover:scale-105 transition-transform duration-300">
+                    <div class="relative w-full h-80 mb-4 rounded overflow-hidden">
+                        <img src="images/ebook-cover-example.png" alt="Capa do eBook O Mal Governo Bolsonaro vs. Os Feitos do Governo Lula" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-montserrat font-semibold text-brand-blue-dark mb-2 min-h-[3em]">O Mal Governo Bolsonaro vs. Os Feitos do Governo Lula</h3>
+                    <p class="text-brand-text-dark text-sm mb-3 flex-grow min-h-[6em]">Este e-book apresenta uma análise crítica e apaixonada do governo Bolsonaro, destacando seu fracasso em proteger a população e o país. Expomos o contraste marcante com a gestão de Lula, que liderou avanços sociais e econômicos que melhoraram a vida de milhões.</p>
+                    <p class="text-2xl font-montserrat font-bold text-brand-orange mb-4">R$ 12,90</p>
+                    <a href="https://kiwify.com.br/livro-exemplo" target="_blank" rel="noopener noreferrer"
+                       class="mt-auto bg-brand-blue-dark text-brand-white text-center font-montserrat font-semibold py-3 px-6 rounded-md hover:bg-opacity-90 transition-colors w-full block shadow-md">
+                        Comprar Agora
+                    </a>
+                </div>
+            </div>
+            <p class="text-center text-brand-text-dark mt-12">
+                Mais eBooks incríveis em breve! Fique de olho em nossos lançamentos.
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-brand-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-brand-blue-dark text-center mb-12">Sobre a Bookverse Digital</h2>
+            <div class="md:flex md:items-center md:gap-8">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://via.placeholder.com/500x350/0A2463/FFFFFF?text=Autor+Inspirador" alt="Foto do Autor (Placeholder)" class="rounded-lg shadow-lg mx-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-montserrat font-semibold text-brand-blue-dark mb-4">Nossa História e Propósito</h3>
+                    <p class="text-brand-text-dark mb-4 leading-relaxed">Bem-vindo à Bookverse Digital! Sou [Seu Nome/Nome da Marca], um apaixonado por [seu nicho/área de escrita] e acredito firmemente que o conhecimento tem o poder de transformar vidas. Minha jornada na escrita começou com o desejo de compartilhar ideias, insights e histórias que pudessem inspirar, educar e capacitar outras pessoas a alcançarem seus objetivos e a verem o mundo sob novas perspectivas.</p>
+                    <p class="text-brand-text-dark mb-4 leading-relaxed">Cada eBook que você encontra aqui é fruto de muita pesquisa, dedicação e uma vontade genuína de oferecer conteúdo de alta qualidade, acessível e verdadeiramente útil. Acredito que a leitura é uma das ferramentas mais poderosas para o desenvolvimento pessoal e profissional, e meu objetivo é fornecer a você chaves que abram portas para novas compreensões e realizações.</p>
+                    <p class="text-brand-text-dark mb-6 leading-relaxed">Espero que meus eBooks possam acompanhá-lo em sua jornada, trazendo clareza, motivação e as ferramentas necessárias para você construir a vida que deseja. Obrigado por fazer parte da comunidade Bookverse Digital!</p>
+                    <a href="#catalog"
+                       class="bg-brand-orange text-brand-white font-montserrat font-semibold py-3 px-8 rounded-md hover:bg-opacity-80 transition-colors text-lg inline-block shadow-lg transform hover:scale-105">
+                        Explore Nossos eBooks
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-brand-gray-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-brand-blue-dark text-center mb-12">
+                O Que Nossos Leitores Dizem
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-brand-white p-8 rounded-lg shadow-xl text-center transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://via.placeholder.com/80/FF8C42/FFFFFF?text=A" alt="Avatar de Ana P." class="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-brand-orange object-cover">
+                    <p class="text-brand-text-dark italic mb-4 text-sm">"Este eBook mudou completamente minha perspectiva sobre o assunto. Leitura obrigatória! Simplesmente fantástico e muito bem escrito."</p>
+                    <p class="font-montserrat font-semibold text-brand-blue-medium">Ana P., Leitora Satisfeita</p>
+                </div>
+                <div class="bg-brand-white p-8 rounded-lg shadow-xl text-center transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://via.placeholder.com/80/FF8C42/FFFFFF?text=C" alt="Avatar de Carlos R." class="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-brand-orange object-cover">
+                    <p class="text-brand-text-dark italic mb-4 text-sm">"Nunca pensei que aprenderia tanto de forma tão envolvente. Recomendo a todos que buscam conhecimento prático e direto ao ponto."</p>
+                    <p class="font-montserrat font-semibold text-brand-blue-medium">Carlos R., Estudante Dedicado</p>
+                </div>
+                <div class="bg-brand-white p-8 rounded-lg shadow-xl text-center transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://via.placeholder.com/80/FF8C42/FFFFFF?text=J" alt="Avatar de Juliana M." class="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-brand-orange object-cover">
+                    <p class="text-brand-text-dark italic mb-4 text-sm">"Conteúdo de altíssima qualidade, direto ao ponto e muito prático. Valeu cada centavo! Um investimento no meu desenvolvimento."</p>
+                    <p class="font-montserrat font-semibold text-brand-blue-medium">Juliana M., Profissional da Área</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-brand-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-brand-blue-dark text-center mb-12">Entre em Contato</h2>
+            <div class="max-w-2xl mx-auto bg-brand-gray-light p-8 rounded-lg shadow-xl">
+                <p class="text-brand-text-dark text-center mb-6">Tem alguma dúvida, sugestão ou gostaria de saber mais? Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+                <form action="mailto:seuemaildecontato@example.com" method="post" enctype="text/plain">
+                    <div class="mb-4">
+                        <label for="name" class="block text-brand-blue-dark font-montserrat font-semibold mb-2">Nome Completo</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-brand-blue-medium rounded-md focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none" placeholder="Seu nome completo">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-brand-blue-dark font-montserrat font-semibold mb-2">Seu Melhor Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-brand-blue-medium rounded-md focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none" placeholder="seuemail@exemplo.com">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-brand-blue-dark font-montserrat font-semibold mb-2">Assunto</label>
+                        <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-brand-blue-medium rounded-md focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none" placeholder="Sobre qual eBook você gostaria de falar?">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-brand-blue-dark font-montserrat font-semibold mb-2">Sua Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-brand-blue-medium rounded-md focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none" placeholder="Digite sua mensagem aqui..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-brand-orange text-brand-white font-montserrat font-semibold py-3 px-8 rounded-md hover:bg-opacity-80 transition-colors text-lg shadow-lg transform hover:scale-105">
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="bg-brand-blue-dark text-brand-gray-light py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-montserrat font-semibold mb-4 text-brand-white">Bookverse Digital</h3>
+                    <p class="text-sm">
+                        Explorando o universo do conhecimento, um eBook de cada vez. Nossa missão é inspirar e transformar através da leitura.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-montserrat font-semibold mb-4 text-brand-white">Links Rápidos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#hero" class="hover:text-brand-orange transition-colors">Início</a></li>
+                        <li><a href="#catalog" class="hover:text-brand-orange transition-colors">Catálogo</a></li>
+                        <li><a href="#about" class="hover:text-brand-orange transition-colors">Sobre</a></li>
+                        <li><a href="#testimonials" class="hover:text-brand-orange transition-colors">Depoimentos</a></li>
+                        <li><a href="#contact" class="hover:text-brand-orange transition-colors">Contato</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition-colors">Política de Privacidade (Placeholder)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-montserrat font-semibold mb-4 text-brand-white">Conecte-se Conosco</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 mb-4">
+                        <a href="#" aria-label="Facebook" class="hover:text-brand-orange transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter" class="hover:text-brand-orange transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.4 3.3 4.4s-1.4 1.4-2.8 2.1c.7 2.8 2.1 4.9 2.1 4.9s-2.1 1.4-4.2 1.4c-.7 1.4-2.1 2.8-4.2 2.8s-3.5-1.4-4.2-2.8c-2.1 0-4.2-1.4-4.2-1.4s1.4-2.1 2.1-4.9c-1.4-.7-2.8-2.1-2.8-2.1s1.8-3 3.3-4.4C3.4 6.1 2.7 4 2.7 4s2.1-.7 4.2.7c1.4-1.4 3.5-2.1 5.6-2.1s4.2.7 5.6 2.1c2.1-1.4 4.2-.7 4.2-.7z"/></svg></a>
+                        <a href="#" aria-label="Instagram" class="hover:text-brand-orange transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                    </div>
+                    <h4 class="font-montserrat font-semibold mb-2 text-brand-white">Newsletter</h4>
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Seu email" class="bg-brand-blue-medium text-brand-white placeholder-brand-gray-light px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm flex-grow" />
+                        <button type="submit" class="bg-brand-orange text-brand-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors font-semibold text-sm">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-brand-blue-medium pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> Bookverse Digital. Todos os direitos reservados.</p>
+                <p class="mt-1">Espaço para atualizações futuras ou link para Blog (Placeholder)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for anchor links & close mobile menu on click
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
